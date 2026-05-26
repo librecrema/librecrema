@@ -2,7 +2,20 @@ LibreCrema
 ==========
 
 > [!WARNING]
-> LibreCrema is, for now, a purely theoretical implementation and is yet to be deployed on real, physical hardware. This is a personal hobby project currently under active development. The ultimate goal is to evolve this codebase until it is stable and robust enough to safely and reliably drive basic physical espresso machines.
+> 
+> **IMPORTANT:** LibreCrema is, for now, a **purely theoretical implementation** and has **NOT** been deployed, validated, or certified on real, physical hardware. This is a personal hobby project currently under active development. The ultimate goal is to evolve this codebase until it is stable and robust enough to safely and reliably drive physical espresso machines.
+> 
+> ### High-Voltage, Thermal, and Pressure Hazard Warning
+>
+> Working on or modifying espresso machines involves dealing with three highly dangerous elements:
+> *   **Mains Voltage (110V/220V AC):** Exposure to AC mains electricity can cause severe electrical shock, permanent injury, or electrocution.
+> *   **Extreme Heat (1600W+ Elements):** Heating elements can reach temperatures capable of causing severe thermal burns, melting electrical insulation, and starting electrical fires.
+> *   **Extreme Pressure (9+ Bar):** Water under high pressure and steam can cause explosive structural failure of boilers/lines and severe scalding.
+> 
+> ### 3\. Hardware Fail-Safes Are Mandatory (Do Not Rely on Software)
+> 
+> In any embedded control system, **software must never be the sole line of defense** for safety-critical operations. Microcontrollers can crash, lock up, or experience brownouts. Furthermore, Solid-State Relays (SSRs) and TRIACs **most commonly fail closed** (conducting permanently), meaning your software will be completely unable to turn off the heater or pump if a component fails.
+> If you ever attempt to deploy this software on physical hardware, **you must implement independent, hardware-level, non-software-reliant safety mechanisms**.
 
 LibreCrema is a modular, hardware-agnostic, and safe control engine designed for next-generation espresso machines. Built in Rust with a strict separation between an idiomatic safe core and a thin FFI/C translation layer, it achieves 100% memory safety, predictable execution times, and zero heap allocation—making it ideal for bare-metal deployment on microcontrollers like the ESP32.
 
