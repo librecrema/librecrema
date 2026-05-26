@@ -1,0 +1,20 @@
+[package]
+name = "librecrema"
+version = "0.1.0"
+edition = "2021"
+authors = ["LibreCrema Contributors"]
+description = "Clean, safe, trait-based control engine for espresso machines with FFI wrapper"
+
+[lib]
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[dependencies]
+libc = { version = "0.2", default-features = false }
+libm = "0.2.8" # Platform-independent float math
+
+[build-dependencies]
+cbindgen = "0.26.0"
+
+[features]
+default = ["with-std"]
+with-std = []
