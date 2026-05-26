@@ -1,6 +1,9 @@
 LibreCrema
 ==========
 
+> [!WARNING]
+> LibreCrema is, for now, a purely theoretical implementation and is yet to be deployed on real, physical hardware. This is a personal hobby project currently under active development. The ultimate goal is to evolve this codebase until it is stable and robust enough to safely and reliably drive basic physical espresso machines.
+
 LibreCrema is a modular, hardware-agnostic, and safe control engine designed for next-generation espresso machines. Built in Rust with a strict separation between an idiomatic safe core and a thin FFI/C translation layer, it achieves 100% memory safety, predictable execution times, and zero heap allocation—making it ideal for bare-metal deployment on microcontrollers like the ESP32.
 
 Key Architectural Advantages
